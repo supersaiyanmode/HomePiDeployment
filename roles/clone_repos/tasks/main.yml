@@ -1,6 +1,6 @@
 ---
 
-- name: Clone the repository
+- name: Clone the Main Deployment repository
   git:
      repo: 'git@github.com:supersaiyanmode/HomePiDeployment.git'
      dest: /home/rpi/Code/HomePiDeployment
