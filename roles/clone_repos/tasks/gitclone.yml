@@ -1,0 +1,12 @@
+- git:
+   repo: "{{ repo.url }}"
+   dest: "/home/rpi/Code/{{ repo.name }}"
+   key_file: "/home/rpi/.ssh/id_rsa-{{ repo.name }}"
+   clone: yes
+   update: no
+   accept_hostkey: yes
+   force: yes
+
+- shell: "ssh-keygen -b 2048 -t rsa -f /home/rpi/.ssh/id_rsa-{{ repo.name }} -q -N ''"
+  args:
+    creates: "/home/rpi/.ssh/id_rsa-{{ repo.name }}"

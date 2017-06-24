@@ -1,13 +1,9 @@
 ---
 
-- name: Clone the Main Deployment repository
-  git:
-     repo: 'git@github.com:supersaiyanmode/HomePiDeployment.git'
-     dest: /home/rpi/Code/HomePiDeployment
-     key_file: /home/rpi/.ssh/id_rsa-HomePiDeployment
-     clone: yes
-     update: no
-     accept_hostkey: yes
-     force: yes
+- name: Setup repositories
   ignore_errors: yes
+  include: gitclone.yml repo={{item}}
+  with_items:
+    - { url: 'git@github.com:supersaiyanmode/HomePiDeployment.git', name: 'HomePiDeployment'}
+    - { url: 'git@github.com:supersaiyanmode/ObjectDetector.git', name: 'ObjectDetector'}
 
