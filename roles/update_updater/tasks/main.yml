@@ -4,6 +4,7 @@
   git:
      repo: 'git@github.com:supersaiyanmode/HomePiDeployment.git'
      dest: /home/rpi/Code/HomePiDeployment
+     key_file: /home/rpi/.ssh/id_rsa-HomePiDeployment
      update: yes
      accept_hostkey: yes
      force: yes
