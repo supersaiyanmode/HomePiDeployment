@@ -1,5 +1,6 @@
 
  - hosts: all
    roles:
-       - role: update_updater
+       - role: directory_structure
+       - role: clone_repos
 

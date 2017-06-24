@@ -1,0 +1,12 @@
+---
+
+- name: Create Essential folder structures.
+  file:
+    path: "{{ item }}"
+    state: directory
+    owner: rpi
+    group: rpi
+  with_items:
+    - ~rpi/Code
+    - ~rpi/scripts
+
