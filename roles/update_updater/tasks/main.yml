@@ -1,5 +1,10 @@
+---
 
-- name: "Clone the repository."
+- name: Clone the repository
   git:
-     - repo: git@github.com:supersaiyanmode/HomePiDeployment.git
-     - dest: /home/rpi/Code/
+     repo: 'git@github.com:supersaiyanmode/HomePiDeployment.git'
+     dest: /home/rpi/Code/HomePiDeployment
+     update: yes
+     accept_hostkey: yes
+     force: yes
+  ignore_errors: yes
