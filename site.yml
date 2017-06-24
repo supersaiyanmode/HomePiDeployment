@@ -1,0 +1,5 @@
+
+ - host: all
+   roles:
+       - role: update_updater
+

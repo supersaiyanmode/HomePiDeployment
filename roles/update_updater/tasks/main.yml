@@ -1,0 +1,5 @@
+
+- name: "Clone the repository."
+  git:
+     - repo: git@github.com:supersaiyanmode/HomePiDeployment.git
+     - dest: /home/rpi/Code/
