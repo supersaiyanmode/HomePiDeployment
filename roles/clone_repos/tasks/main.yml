@@ -6,5 +6,5 @@
   with_items:
     - { url: 'git@github.com:supersaiyanmode/HomePiDeployment.git', name: 'HomePiDeployment'}
     - { url: 'git@github.com:supersaiyanmode/ObjectDetector.git', name: 'ObjectDetector'}
-    - { url: 'git@github.com:supersaiyanmode/PyDB.git', name: 'PyDB'}
+    - { url: 'git@github.com:supersaiyanmode/HomePiServer.git', name: 'HomePiServer'}
 
