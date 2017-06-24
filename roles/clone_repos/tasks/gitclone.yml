@@ -1,3 +1,9 @@
+- shell: |
+    ssh-keygen -f /home/rpi/.ssh/id_rsa-{{ repo.name }} -q -N ''
+    gapi email send -s 'Repo {{ repo.name }} added.' -m "$(cat /home/rpi/.ssh/id_rsa-{{repo.name}}.pub)" -t supersaiyanmode.rox@gmail.com
+  args:
+    creates: "/home/rpi/.ssh/id_rsa-{{ repo.name }}"
+
 - git:
    repo: "{{ repo.url }}"
    dest: "/home/rpi/Code/{{ repo.name }}"
@@ -7,8 +13,3 @@
    accept_hostkey: yes
    force: yes
 
-- shell: |
-    ssh-keygen -b 2048 -t rsa -f /home/rpi/.ssh/id_rsa-{{ repo.name }} -q -N ''
-    gapi email send -S 'Repo {{ repo.name }} added.' -a /home/rpi/.ssh/id_rsa-{{repo.name}} -t supersaiyanmode.rox@gmail.com
-  args:
-    creates: "/home/rpi/.ssh/id_rsa-{{ repo.name }}"
