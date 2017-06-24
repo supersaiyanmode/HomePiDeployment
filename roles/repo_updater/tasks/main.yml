@@ -1,0 +1,21 @@
+---
+
+- name: Copy scripts to check updates.
+  copy:
+     src: check_updates.sh
+     dest: /home/rpi/scripts
+     owner: rpi
+     group: rpi
+     mode: "u+rwx,g-rwx,o-rwx"
+
+
+- name: Copy scripts to run updates.
+  copy:
+     src: update_repos.sh
+     dest: /home/rpi/scripts
+     owner: rpi
+     group: rpi
+     mode: "u+rwx,g-rwx,o-rwx"
+
+
+

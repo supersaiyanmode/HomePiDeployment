@@ -2,5 +2,6 @@
  - hosts: all
    roles:
        - role: directory_structure
+       - role: repo_updater
        - role: clone_repos
 
