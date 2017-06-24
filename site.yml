@@ -4,4 +4,6 @@
        - role: create_directory_structure
        - role: install_repo_updater
        - role: clone_repos
+       - role: install_piserver
+       - role: install_chromium_service
 

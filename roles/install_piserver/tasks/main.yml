@@ -1,0 +1,26 @@
+---
+
+- name: Install HomePiServer unit.
+  sudo: yes
+  copy:
+    src: piserver.service
+    dest: /etc/systemd/system/
+    owner: root
+    group: root
+    mode: "u=rw,g=r,o=r"
+
+
+- name: Install server dependencies.
+  sudo: yes
+  pip:
+    requirements: /home/rpi/Code/HomePiServer/requirements.txt
+    executable: pip3.6
+
+- name: Enable HomePiServer unit
+  sudo: yes
+  systemd:
+    state: started
+    enabled: yes
+    name: piserver.service
+    daemon_reload: yes
+

@@ -1,0 +1,15 @@
+[Unit]
+Description=Home Raspberry Server
+
+[Service]
+WorkingDirectory=/home/rpi/Code/HomePiServer
+ExecStart=/usr/bin/python /home/rpi/Code/HomePiServer/app.py
+Restart=always
+RestartSec=10
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=piserver
+User=rpi
+
+[Install]
+WantedBy=multi-user.target

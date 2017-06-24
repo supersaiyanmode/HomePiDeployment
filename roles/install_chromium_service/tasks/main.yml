@@ -1,0 +1,30 @@
+---
+
+- name: Install Chromium Service File
+  sudo: yes
+  copy:
+    src: display.service
+    dest: /etc/systemd/system/display.service
+    owner: root
+    group: root
+    mode: "u=rw,g=r,o=r"
+
+
+- name: Install .xinitrc
+  sudo: yes
+  copy:
+    src: xinitrc
+    dest: /home/rpi/.xinitrc
+    owner: rpi
+    group: rpi
+    mode: "u=rw"
+
+
+- name: Enable Chromium Service unit
+  sudo: yes
+  systemd:
+    state: started
+    enabled: yes
+    name: display.service
+    daemon_reload: yes
+

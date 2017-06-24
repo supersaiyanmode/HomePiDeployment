@@ -1,0 +1,4 @@
+#!/bin/sh
+
+exec chromium --start-maximized --window-size=1824,984 --kiosk 'http://localhost:5000/'
+

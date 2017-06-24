@@ -1,0 +1,21 @@
+[Unit]
+Description=Display
+
+Conflicts=getty@tty1.service
+After=getty@tty1.service
+
+After=rc-local.service system-user-sessions.service
+
+
+[Service]
+ExecStart=/bin/sh -c 'DISPLAY=:0 startx'
+User=rpi
+KillMode=mixed
+Restart=always
+StandardOutput=syslog
+StandardError=inherit
+
+[Install]
+Alias=display-manager.service
+
+
