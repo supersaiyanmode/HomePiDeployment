@@ -9,7 +9,7 @@ for repo in $BASE/*; do
 
     e=${SSH_PRE}$(basename $repo)
 
-    GIT_SSH_COMMAND="$e" git fetch
+    GIT_SSH_COMMAND="$e" git fetch > /dev/null 2>&1
 
     head=$(GIT_SSH_COMMAND="$e" git rev-parse HEAD)
     remote=$(GIT_SSH_COMMAND="$e" git rev-parse @{u})
@@ -17,3 +17,4 @@ for repo in $BASE/*; do
 	echo $repo
     fi
 done
+
