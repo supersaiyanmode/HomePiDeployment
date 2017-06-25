@@ -20,7 +20,7 @@
 
 - name: Copy scripts to run ansible.
   copy:
-     src: run_ansible
+     src: run_ansible.sh
      dest: /home/rpi/scripts
      owner: rpi
      group: rpi
