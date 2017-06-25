@@ -1,4 +1,4 @@
 #!/bin/sh
 
-exec chromium --start-maximized --disable-infobars --disable-session-crashed-bubble --disable-tab-switcher --disable-translate --no-first-run --touch-events=enabled --fast --fast-start --window-size=1824,984 --kiosk 'http://localhost:5000/'
+exec chromium --start-maximized --disable-infobars --disable-session-crashed-bubble --disable-tab-switcher --disable-translate --disk-cache-dir=/dev/null --incognito --no-first-run --touch-events=enabled --fast --fast-start --window-size=1824,984 --kiosk 'http://localhost:5000/'
 
