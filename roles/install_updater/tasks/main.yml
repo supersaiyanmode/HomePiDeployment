@@ -18,4 +18,14 @@
      mode: "u+rwx,g-rwx,o-rwx"
 
 
+- name: Copy scripts to run ansible.
+  copy:
+     src: run_ansible
+     dest: /home/rpi/scripts
+     owner: rpi
+     group: rpi
+     mode: "u+rwx,g-rwx,o-rwx"
+
+
+
 
