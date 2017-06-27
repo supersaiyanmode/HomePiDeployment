@@ -1,0 +1,9 @@
+---
+- name: Create rpi user
+  sudo: yes
+  user:
+    name: rpi
+    shell: /bin/bash
+    groups: video
+    append: yes
+
