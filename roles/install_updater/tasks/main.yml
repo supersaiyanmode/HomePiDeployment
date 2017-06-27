@@ -27,5 +27,16 @@
      mode: "u+rwx,g-rwx,o-rwx"
 
 
+- name: Copy scripts to reboot.
+  copy:
+     src: reboot.sh
+     dest: /home/rpi/scripts
+     owner: rpi
+     group: rpi
+     mode: "u+rwx,g-rwx,o-rwx"
+
+
+
+
 
 
