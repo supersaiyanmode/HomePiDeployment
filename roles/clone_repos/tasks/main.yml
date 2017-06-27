@@ -7,4 +7,5 @@
     - { url: 'git@github.com:supersaiyanmode/HomePiDeployment.git', name: 'HomePiDeployment'}
     - { url: 'git@github.com:supersaiyanmode/ObjectDetector.git', name: 'ObjectDetector'}
     - { url: 'git@github.com:supersaiyanmode/HomePiServer.git', name: 'HomePiServer'}
+    - { url: 'git@github.com:supersaiyanmode/Test.git', name: 'Test'}
 
