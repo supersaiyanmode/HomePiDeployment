@@ -1,4 +1,12 @@
 ---
+- name: Create logger directory.
+  sudo: yes
+  file:
+    path: /var/log/piserver
+    state: directory
+    mode: 0755
+    owner: rpi
+    group: rpi
 
 - name: Install HomePiServer unit.
   sudo: yes
