@@ -9,6 +9,7 @@ After=rc-local.service system-user-sessions.service
 
 [Service]
 ExecStart=/bin/sh -c 'DISPLAY=:0 startx'
+ExecStop=/usr/bin/pkill -15 Xorg
 User=rpi
 KillMode=mixed
 Restart=always
