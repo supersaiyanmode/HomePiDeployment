@@ -1,0 +1,17 @@
+---
+
+- name: Install Bluetooth services
+  sudo: yes
+  aur: name=pi-bluetooth tool=yaourt
+
+- name: Install Bluetooth Packages
+  sudo: yes
+  pacman:
+    name: "{{item}}"
+    state: present
+  with_items:
+    - bluez-utils
+    - pulseaudio-bluetooth
+    - bluez-libs
+    - pulseaudio-alsa
+
