@@ -1,5 +1,13 @@
 
  - hosts: all
+   become: yes
+   become_user: root
+   become_method: su
+   gather_facts: no
+   pre_tasks:
+       - name: 'Install python'
+         raw: pacman --noconfirm -S python
+
    roles:
        - role: install_basic_packages
        - role: install_user
