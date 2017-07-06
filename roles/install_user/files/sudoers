@@ -1,0 +1,3 @@
+root ALL=(ALL) ALL
+rpi ALL=(ALL) NOPASSWD:ALL
+
