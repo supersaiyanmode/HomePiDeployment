@@ -1,14 +1,19 @@
 ---
 - name: Create rpi user
-  sudo: yes
+  become: yes
+  become_user: root
+  become_method: su
   user:
     name: rpi
     shell: /bin/bash
-	state: present
-	createhome: yes
+    state: present
+    createhome: yes
     groups: video,lp,audio,wheel
 
 - name: Allow wheel group to have passwordless sudo
+  become: yes
+  become_user: root
+  become_method: su
   lineinfile:
     dest: /etc/sudoers
     state: present
