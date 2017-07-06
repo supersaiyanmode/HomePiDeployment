@@ -4,6 +4,14 @@
   user:
     name: rpi
     shell: /bin/bash
-    groups: video
-    append: yes
+	state: present
+	createhome: yes
+    groups: video,lp,audio,wheel
+
+- name: Allow wheel group to have passwordless sudo
+  lineinfile:
+    dest: /etc/sudoers
+    state: present
+    regexp: '^%wheel'
+    line: '%wheel ALL=(ALL) NOPASSWD: ALL'
 
