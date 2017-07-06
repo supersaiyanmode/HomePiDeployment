@@ -10,13 +10,21 @@
     createhome: yes
     groups: video,lp,audio,wheel
 
-- name: Allow wheel group to have passwordless sudo
+- name: Install Sudoers file
   become: yes
   become_user: root
   become_method: su
-  lineinfile:
+  copy:
+    src: sudoers
     dest: /etc/sudoers
+    owner: root
+    group: root
+    mode: "u=r,g=r"
+
+- name: Set authorized key took from file
+  authorized_key:
+    user: rpi
     state: present
-    regexp: '^%wheel'
-    line: '%wheel ALL=(ALL) NOPASSWD: ALL'
+    key: "{{ lookup('file', '/home/' + lookup('ENV', 'USER') + '/.ssh/id_rsa.pub') }}"
+
 
