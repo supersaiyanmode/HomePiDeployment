@@ -21,4 +21,5 @@
     - xorg-xinit
     - xorg-server
     - xf86-video-fbdev
+    - chromium
 
