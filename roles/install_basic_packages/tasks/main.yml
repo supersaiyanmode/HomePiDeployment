@@ -4,6 +4,7 @@
   become: true
   become_method: su
   become_user: root
+  remote_user: rpi
   pacman: name={{ item }} state=present update_cache=yes
   with_items:
     - python-pip

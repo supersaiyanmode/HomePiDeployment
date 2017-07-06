@@ -1,6 +1,9 @@
 ---
 - name: Create logger directory.
-  sudo: yes
+  remote_user: rpi
+  become: true
+  become_method: su
+  become_user: root
   file:
     path: /var/log/piserver
     state: directory
@@ -9,7 +12,10 @@
     group: rpi
 
 - name: Install HomePiServer unit.
-  sudo: yes
+  remote_user: rpi
+  become: true
+  become_method: su
+  become_user: root
   copy:
     src: piserver.service
     dest: /etc/systemd/system/
@@ -29,7 +35,10 @@
 
 
 - name: Install server dependencies.
-  sudo: yes
+  remote_user: rpi
+  become: true
+  become_method: su
+  become_user: root
   environment:
     CFLAGS: "{{ cflags.stdout }}"
     LDFLAGS: "{{ libs.stdout }}"

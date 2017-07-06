@@ -1,7 +1,10 @@
 ---
 
 - name: Install Chromium Service File
-  sudo: yes
+  remote_user: rpi
+  become: true
+  become_method: su
+  become_user: root
   copy:
     src: display.service
     dest: /etc/systemd/system/display.service
@@ -11,7 +14,10 @@
 
 
 - name: Install .xinitrc
-  sudo: yes
+  remote_user: rpi
+  become: true
+  become_method: su
+  become_user: root
   copy:
     src: xinitrc
     dest: /home/rpi/.xinitrc
@@ -21,7 +27,10 @@
 
 
 - name: Enable Chromium Service unit
-  sudo: yes
+  remote_user: rpi
+  become: true
+  become_method: su
+  become_user: root
   systemd:
     state: started
     enabled: yes
