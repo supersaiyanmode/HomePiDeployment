@@ -1,5 +1,3 @@
 WIFI_NAME: null
-WIFI_PWD: null
-PUBLIC_KEY: null
-ROOT_PWD: null
-
+WIFI_PASSWD: null
+RPI_PASSWD: null
