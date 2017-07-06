@@ -37,3 +37,16 @@
     name: display.service
     daemon_reload: yes
 
+- name: Install Xwrapper
+  remote_user: rpi
+  become: true
+  become_method: su
+  become_user: root
+  copy:
+    src: Xwrapper.config
+    dest: /etc/X11/Xwrapper.config
+    owner: root
+    group: root
+    mode: "u=rw,g=r,o=r"
+
+
