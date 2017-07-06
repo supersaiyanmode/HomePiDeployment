@@ -17,3 +17,4 @@
     - openssl
     - pkg-config
     - libffi
+    - netctl
