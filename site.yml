@@ -6,12 +6,12 @@
    gather_facts: no
    pre_tasks:
        - name: 'Install python'
-         raw: pacman --noconfirm -S python
+         raw: pacman --noconfirm --needed -S python
 
    roles:
        - role: install_boot
-       - role: install_basic_packages
        - role: install_user
+       - role: install_basic_packages
        - role: create_directory_structure
        - role: install_updater
        - role: clone_repos
