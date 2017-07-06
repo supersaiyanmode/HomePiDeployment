@@ -38,10 +38,65 @@
     executable: pip
 
 - name: Enable HomePiServer unit
-  sudo: yes
+  remote_user: rpi
+  become: true
+  become_method: su
+  become_user: root
   systemd:
     state: started
     enabled: yes
     name: piserver.service
     daemon_reload: yes
+
+- name: Copy scripts to check updates.
+  remote_user: rpi
+  become: true
+  become_method: su
+  become_user: root
+  copy:
+     src: check_updates.sh
+     dest: /home/rpi/scripts
+     owner: rpi
+     group: rpi
+     mode: "u=rx"
+
+
+- name: Copy scripts to run updates.
+  remote_user: rpi
+  become: true
+  become_method: su
+  become_user: root
+  copy:
+     src: update_repos.sh
+     dest: /home/rpi/scripts
+     owner: rpi
+     group: rpi
+     mode: "u=rx"
+
+
+- name: Copy scripts to run ansible.
+  remote_user: rpi
+  become: true
+  become_method: su
+  become_user: root
+  copy:
+     src: run_ansible.sh
+     dest: /home/rpi/scripts
+     owner: rpi
+     group: rpi
+     mode: "u=rx"
+
+
+- name: Copy scripts to reboot.
+  remote_user: rpi
+  become: true
+  become_method: su
+  become_user: root
+  copy:
+     src: reboot.sh
+     dest: /home/rpi/scripts
+     owner: rpi
+     group: rpi
+     mode: "u=rx"
+
 
