@@ -1,6 +1,7 @@
 ---
 
 - name: Setup repositories
+  remote_user: rpi
   ignore_errors: yes
   include: gitclone.yml repo={{item}}
   with_items:
