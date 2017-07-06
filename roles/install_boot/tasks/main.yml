@@ -1,7 +1,9 @@
 ---
 
 - name: Install config.txt
-  sudo: yes
+  become: yes
+  become_user: root
+  become_method: su
   copy:
     src: config.txt
     dest: /boot
