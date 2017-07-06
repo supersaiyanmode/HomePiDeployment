@@ -4,8 +4,6 @@
   ignore_errors: yes
   include: gitclone.yml repo={{item}}
   with_items:
-    - { url: 'git@github.com:supersaiyanmode/HomePiDeployment.git', name: 'HomePiDeployment'}
-    - { url: 'git@github.com:supersaiyanmode/ObjectDetector.git', name: 'ObjectDetector'}
-    - { url: 'git@github.com:supersaiyanmode/HomePiServer.git', name: 'HomePiServer'}
-    - { url: 'git@github.com:supersaiyanmode/Test.git', name: 'Test'}
+    - { url: 'https://github.com/supersaiyanmode/HomePiDeployment.git', name: 'HomePiDeployment'}
+    - { url: 'https://github.com/supersaiyanmode/HomePiServer.git', name: 'HomePiServer'}
 
