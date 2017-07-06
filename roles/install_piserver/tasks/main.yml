@@ -18,11 +18,24 @@
     mode: "u=rw,g=r,o=r"
 
 
+- name: Get libffi cflags
+  shell: "pkg-config --cflags libffi"
+  register: cflags
+
+
+- name: Get libffi libs
+  shell: "pkg-config --libs libffi"
+  register: libs
+
+
 - name: Install server dependencies.
   sudo: yes
+  environment:
+    CFLAGS: "{{ cflags.stdout }}"
+    LDFLAGS: "{{ libs.stdout }}"
   pip:
     requirements: /home/rpi/Code/HomePiServer/requirements.txt
-    executable: pip3.6
+    executable: pip
 
 - name: Enable HomePiServer unit
   sudo: yes
