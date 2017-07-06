@@ -15,3 +15,9 @@
   become_method: su
   shell: netctl enable wlan0-profile
 
+- name: Start Wifi
+  become: yes
+  become_user: root
+  become_method: su
+  shell: netctl start wlan0-profile
+
