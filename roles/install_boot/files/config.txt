@@ -1,0 +1,20 @@
+# See /boot/overlays/README for all available options
+
+gpu_mem=64
+
+# HDMI Settings
+hdmi_drive=2
+config_hdmi_boost=8
+#hdmi_group=1
+#hdmi_mode=16
+# disable_overscan=1
+
+
+#General Display Settings
+framebuffer_depth=32
+
+
+
+# Kernel
+initramfs initramfs-linux.img followkernel
+

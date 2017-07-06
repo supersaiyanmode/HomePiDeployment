@@ -1,0 +1,11 @@
+---
+
+- name: Install config.txt
+  sudo: yes
+  copy:
+    src: config.txt
+    dest: /boot
+    owner: root
+    group: root
+    mode: "u=rw,g=rx,o=rx"
+
