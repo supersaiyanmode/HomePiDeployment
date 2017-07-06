@@ -18,3 +18,7 @@
     - pkg-config
     - libffi
     - netctl
+    - xorg-xinit
+    - xorg-server
+    - xf86-video-fbdev
+
