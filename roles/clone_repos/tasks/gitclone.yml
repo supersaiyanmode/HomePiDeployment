@@ -1,4 +1,5 @@
-- git:
+- name: "Cloning: {{repo.name}}"
+  git:
    repo: "{{ repo.url }}"
    dest: "/home/rpi/Code/{{ repo.name }}"
    clone: yes

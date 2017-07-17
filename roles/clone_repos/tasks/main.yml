@@ -8,3 +8,18 @@
     - { url: 'https://github.com/supersaiyanmode/HomePiDeployment.git', name: 'HomePiDeployment'}
     - { url: 'https://github.com/supersaiyanmode/HomePiServer.git', name: 'HomePiServer'}
 
+- name: Copy ansible variables file
+  remote_user: rpi
+  copy:
+    src: variables
+    dest: /home/rpi/Code/HomePiDeployment/variables
+    owner: rpi
+    group: rpi
+    mode: "u=rw"
+
+
+- name: Make rpi the owner
+  become: yes
+  become_user: root
+  become_method: su
+  shell: chown -R rpi:rpi /home/rpi/Code
