@@ -1,0 +1,45 @@
+---
+- name: Create rpi user
+  become: yes
+  become_user: root
+  become_method: su
+  user:
+    name: rpi
+    shell: /bin/bash
+    state: present
+    createhome: yes
+    generate_ssh_key: yes
+    groups: video,lp,audio,wheel
+
+- name: Install Sudoers file
+  become: yes
+  become_user: root
+  become_method: su
+  copy:
+    src: sudoers
+    dest: /etc/sudoers
+    owner: root
+    group: root
+    mode: "u=r,g=r"
+
+- name: Set authorized key took from file
+  authorized_key:
+    user: rpi
+    state: present
+    key: "{{ lookup('file', '/home/' + lookup('ENV', 'USER') + '/.ssh/id_rsa.pub') }}"
+
+- name: Read generated public key
+  become: yes
+  become_user: root
+  become_method: su
+  slurp:
+    src: /home/rpi/.ssh/id_rsa.pub
+  register: pubkey
+
+- name: Set authorized key for rpi user
+  authorized_key:
+    user: rpi
+    state: present
+    key: "{{ pubkey['content'] | b64decode }}"
+
+

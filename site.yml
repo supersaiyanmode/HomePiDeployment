@@ -10,5 +10,5 @@
    vars_files:
       - variables
    roles:
-       - role: install_user
+       - role: install_user_su
 
