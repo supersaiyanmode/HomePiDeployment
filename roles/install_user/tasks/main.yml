@@ -2,7 +2,7 @@
 - name: Create rpi user
   become: yes
   become_user: root
-  become_method: su
+  become_method: sudo
   user:
     name: rpi
     shell: /bin/bash
@@ -14,7 +14,7 @@
 - name: Install Sudoers file
   become: yes
   become_user: root
-  become_method: su
+  become_method: sudo
   copy:
     src: sudoers
     dest: /etc/sudoers
@@ -31,7 +31,7 @@
 - name: Read generated public key
   become: yes
   become_user: root
-  become_method: su
+  become_method: sudo
   slurp:
     src: /home/rpi/.ssh/id_rsa.pub
   register: pubkey

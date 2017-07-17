@@ -1,1 +1,1 @@
-localhost ansible_user=rpi
+put_rpi_ip_here ansible_user=alarm ansible_ssh_pass=alarm

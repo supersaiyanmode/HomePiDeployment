@@ -1,0 +1,14 @@
+
+ - hosts: all
+   vars_files:
+      - variables
+   roles:
+       - role: install_boot
+       - role: install_network
+       - role: install_user
+       - role: install_basic_packages
+       - role: create_directory_structure
+       - role: clone_repos
+       - role: install_piserver
+       - role: install_chromium_service
+

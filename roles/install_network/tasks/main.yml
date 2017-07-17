@@ -3,7 +3,7 @@
 - name: Create Wifi Config file
   become: yes
   become_user: root
-  become_method: su
+  become_method: sudo
   template: src=wlan0-profile dest=/etc/netctl/wlan0-profile mode="u=r"
   vars:
     SSID: "{{WIFI_NAME}}"
@@ -12,12 +12,12 @@
 - name: Enable Wifi
   become: yes
   become_user: root
-  become_method: su
+  become_method: sudo
   shell: netctl enable wlan0-profile
 
 - name: Start Wifi
   become: yes
   become_user: root
-  become_method: su
+  become_method: sudo
   shell: netctl start wlan0-profile
 

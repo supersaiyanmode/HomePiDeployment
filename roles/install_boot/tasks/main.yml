@@ -3,7 +3,7 @@
 - name: Install config.txt
   become: yes
   become_user: root
-  become_method: su
+  become_method: sudo
   copy:
     src: config.txt
     dest: /boot

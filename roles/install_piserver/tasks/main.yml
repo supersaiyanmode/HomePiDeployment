@@ -2,7 +2,7 @@
 - name: Create logger directory.
   remote_user: rpi
   become: true
-  become_method: su
+  become_method: sudo
   become_user: root
   file:
     path: /var/log/piserver
@@ -14,7 +14,7 @@
 - name: Install HomePiServer unit.
   remote_user: rpi
   become: true
-  become_method: su
+  become_method: sudo
   become_user: root
   copy:
     src: piserver.service
@@ -37,7 +37,7 @@
 - name: Install server dependencies.
   remote_user: rpi
   become: true
-  become_method: su
+  become_method: sudo
   become_user: root
   environment:
     CFLAGS: "{{ cflags.stdout }}"
@@ -49,7 +49,7 @@
 - name: Enable HomePiServer unit
   remote_user: rpi
   become: true
-  become_method: su
+  become_method: sudo
   become_user: root
   systemd:
     state: started
@@ -60,7 +60,7 @@
 - name: Copy scripts to check updates.
   remote_user: rpi
   become: true
-  become_method: su
+  become_method: sudo
   become_user: root
   copy:
      src: check_updates.sh
@@ -73,7 +73,7 @@
 - name: Copy scripts to run updates.
   remote_user: rpi
   become: true
-  become_method: su
+  become_method: sudo
   become_user: root
   copy:
      src: update_repos.sh
@@ -86,7 +86,7 @@
 - name: Copy scripts to run ansible.
   remote_user: rpi
   become: true
-  become_method: su
+  become_method: sudo
   become_user: root
   copy:
      src: run_ansible.sh
@@ -99,7 +99,7 @@
 - name: Copy scripts to reboot.
   remote_user: rpi
   become: true
-  become_method: su
+  become_method: sudo
   become_user: root
   copy:
      src: reboot.sh
@@ -113,7 +113,7 @@
 - name: Copy scripts to shutdown.
   remote_user: rpi
   become: true
-  become_method: su
+  become_method: sudo
   become_user: root
   copy:
      src: shutdown.sh

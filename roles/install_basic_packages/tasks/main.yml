@@ -1,7 +1,7 @@
 ---
 - name: Update Pacman cache
   become: true
-  become_method: su
+  become_method: sudo
   become_user: root
   remote_user: rpi
   pacman:
@@ -9,13 +9,12 @@
 
 - name: Install Pacman packages
   become: true
-  become_method: su
+  become_method: sudo
   become_user: root
   remote_user: rpi
   pacman: name={{ item }} state=present
   with_items:
     - python-pip
-    - sudo
     - wpa_supplicant
     - vim
     - dialog
