@@ -1,4 +1,9 @@
 #!/bin/sh
 
+xset s off         # don't activate screensaver
+xset -dpms         # disable DPMS (Energy Star) features.
+xset s noblank     # don't blank the video device
+
+
 exec chromium --start-maximized --disable-infobars --disable-session-crashed-bubble --disable-tab-switcher --disable-translate --disk-cache-dir=/dev/null --incognito --no-first-run --touch-events=enabled --fast --fast-start --window-size=1824,984 --kiosk 'http://localhost:5000/' --use-fake-ui-for-media-stream
 
