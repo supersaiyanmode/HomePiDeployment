@@ -1,3 +1,4 @@
 WIFI_NAME: null
 WIFI_PASSWD: null
 RPI_PASSWD: null
+REDIS_PASSWD: null

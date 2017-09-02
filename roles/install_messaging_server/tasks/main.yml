@@ -23,3 +23,14 @@
     name: redis.service
     daemon_reload: yes
 
+
+- name: Set Redis password
+  remote_user: rpi
+  become: true
+  become_method: sudo
+  become_user: root
+  lineinfile:
+    path: /etc/redis.conf
+    regexp: '^requirepass'
+    line: "requirepass={{REDIS_PASSWD}}"
+
