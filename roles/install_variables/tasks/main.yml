@@ -1,0 +1,9 @@
+---
+- name: Write out variables file.
+  become: yes
+  become_user: root
+  become_method: su
+  copy:
+    content:  "{{ lookup('file', playbook_dir + '/variables') }}"
+    dest: /home/rpi/.variables
+

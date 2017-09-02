@@ -1,7 +1,7 @@
 
  - hosts: all
    vars_files:
-      - variables
+      - /home/rpi/.variables
    roles:
        - role: install_boot
        - role: install_network

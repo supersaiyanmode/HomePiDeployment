@@ -11,4 +11,5 @@
       - variables
    roles:
        - role: install_user_su
+       - role: install_variables
 
