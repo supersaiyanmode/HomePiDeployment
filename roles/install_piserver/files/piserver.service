@@ -2,9 +2,8 @@
 Description=Home Raspberry Server
 
 [Service]
-WorkingDirectory=/home/rpi/Code/HomePiServer
-ExecStart=/usr/bin/python /home/rpi/Code/HomePiServer/app.py
-ExecStop=/usr/bin/killall -9 python
+WorkingDirectory=/home/rpi/Code/HomePiServer/app_server/
+ExecStart=/usr/bin/python /home/rpi/Code/HomePiServer/app_server/app.py
 Restart=always
 RestartSec=10
 StandardOutput=syslog
