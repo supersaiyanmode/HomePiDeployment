@@ -29,3 +29,5 @@
     - xf86-video-fbdev
     - chromium
     - ansible
+    - redis
+

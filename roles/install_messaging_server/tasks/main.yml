@@ -1,0 +1,14 @@
+---
+
+- name: Install Redis service.
+  remote_user: rpi
+  become: true
+  become_method: sudo
+  become_user: root
+  systemd:
+    state: started
+    enabled: yes
+    name: redis.service
+    daemon_reload: yes
+
+
