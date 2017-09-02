@@ -32,5 +32,5 @@
   lineinfile:
     path: /etc/redis.conf
     regexp: '^requirepass'
-    line: "requirepass={{REDIS_PASSWD}}"
+    line: "requirepass {{REDIS_PASSWD}}"
 
