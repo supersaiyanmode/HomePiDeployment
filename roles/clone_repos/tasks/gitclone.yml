@@ -7,3 +7,17 @@
    accept_hostkey: yes
    force: yes
 
+- name: "Set git config user.name"
+- git_config:
+    name: user.name
+    repo: "/home/rpi/Code/{{ repo.name }}"
+    scope: local
+    value: 'Temp name'
+
+- name: "Set git config user.email"
+- git_config:
+    name: user.email
+    repo: "/home/rpi/Code/{{ repo.name }}"
+    scope: local
+    value: 'temp@email.com'
+
